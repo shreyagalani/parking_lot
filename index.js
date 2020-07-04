@@ -3,14 +3,8 @@ const fs = require('fs');
 const maximumSlots = 100
 var totalParkingSlots
 
-function processInputFile(inputFile) {
-    const readInterface = readline.createInterface({
-        input: fs.createReadStream(`${inputFile}`),
-        // output: process.stdout,
-        console: false
-    });
-    readInterface.on('line', function (line) {
-        const commandAndArguments = line.split(' ')
+function processInputCommand(command) {
+        const commandAndArguments = command.split(' ')
         switch (commandAndArguments[0]) {
             case 'create_parking_lot': {
                 if (commandAndArguments[1] > maximumSlots) {
@@ -63,7 +57,15 @@ function processInputFile(inputFile) {
 
         }
 
-    });
+    ;
 };
-processInputFile(process.argv[2]);
-module.exports = processInputFile;
+if(process.argv[2]){const readInterface = readline.createInterface({
+    input: fs.createReadStream(`${process.argv[2]}`),
+    // output: process.stdout,
+    console: false
+});
+readInterface.on('line', function (line){
+    processInputCommand(line)
+})}
+
+module.exports = processInputCommand;

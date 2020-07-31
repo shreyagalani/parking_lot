@@ -17,7 +17,7 @@ To run setup you can use the below command
 To run the application against custom input you can run the below command from parking_lot directory
  $ `node index.js <input_file>`
 Please refer the below example to create your own input files
-`
+```
     Created parking lot with 6 slots
     Allocated slot number: 1
     Allocated slot number: 2
@@ -47,7 +47,7 @@ Please refer the below example to create your own input files
     4           KA-01-HH-7777
     5           KA-01-HH-2701
     6           KA-01-P-333
-`
+```
 Only .txt files can be accepted as an input file
  
 To run the test cases use below command
